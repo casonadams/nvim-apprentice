@@ -79,6 +79,7 @@ local theme = lush(function()
     Comment      { fg = dim.white }, -- any comment
     Cursor       { fg = normal.foreground }, -- character under the cursor
     CursorLine   { bg = bright.black }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    Conceal      { fg = dim.white }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     DiffAdd      { fg = normal.green, bg = bright.black }, -- diff mode: Added line |diff.txt|
     DiffChange   { fg = normal.blue, bg = bright.black }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { fg = normal.red, bg = bright.black }, -- diff mode: Deleted line |diff.txt|
@@ -123,7 +124,7 @@ local theme = lush(function()
     Statement      { fg = normal.magenta }, -- (preferred) any statement
     Conditional    { fg = normal.magenta }, --  if, then, else, endif, switch, etnormal.
     Repeat         { fg = normal.magenta }, --   for, do, while, etnormal.
-    Label          { fg = normal.magenta }, --    case, default, etnormal.
+    Label          { fg = normal.yellow }, --    case, default, etnormal.
     Operator       { fg = normal.foreground }, -- "sizeof", "+", "*", etnormal.
     Keyword        { fg = normal.magenta }, --  any other keyword
     Exception      { fg = normal.magenta }, --  try, catch, throw
