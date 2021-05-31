@@ -162,7 +162,7 @@ local theme = lush(function()
     Typedef        { fg = normal.yellow }, --  A typedef
 
     Special        { fg = normal.cyan }, -- (preferred) any special symbol
-    SpecialChar    { fg = normal.cyan }, --  special character in a constant
+    SpecialChar    { fg = dim.yellow }, --  special character in a constant
     Tag            { fg = normal.cyan }, --    you can use CTRL-] on this
     Delimiter      { fg = normal.blue }, --  character that needs attention
     SpecialComment { fg = normal.cyan }, -- special things inside a comment
