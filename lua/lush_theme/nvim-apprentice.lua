@@ -15,6 +15,8 @@
 
 local lush = require('lush')
 local hsl = lush.hsl
+local v = vim.g -- this must be done, because lush is executed in a bare environment
+v.colors_name = 'nvim-apprentice.lua'
 
 local c = {
   background = hsl("#262626"),
