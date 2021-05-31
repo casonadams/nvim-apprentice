@@ -520,6 +520,11 @@ local theme = lush(function()
     LspDiagnosticsInformation {fg = clrs.nord8},
     LspDiagnosticsHint {fg = clrs.nord10},
 
+    LspDiagnosticsUnderlineError         { fg = "none", gui = "none" }, -- Used to underline "Error" diagnostics
+    LspDiagnosticsUnderlineWarning       { fg = "none", gui = "none" }, -- Used to underline "Warning" diagnostics
+    LspDiagnosticsUnderlineInformation   { fg = "none", gui = "none" }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineHint          { fg = "none", gui = "none" }, -- Used to underline "Hint" diagnostics
+
     LSPDiagnosticsVirtualTextWarning {
       fg = LspDiagnosticsWarning.fg.de(20).li(10),
       gui = spec.italic,
