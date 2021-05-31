@@ -78,11 +78,20 @@ local theme = lush(function()
   return {
     Comment      { fg = dim.white }, -- any comment
     Cursor       { fg = normal.foreground }, -- character under the cursor
+    lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+    CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
+    CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = bright.black }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    Directory    { }, -- directory names (and other special names in listings)
     Conceal      { fg = dim.white }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     DiffAdd      { fg = normal.green, bg = bright.black }, -- diff mode: Added line |diff.txt|
     DiffChange   { fg = normal.blue, bg = bright.black }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { fg = normal.red, bg = bright.black }, -- diff mode: Deleted line |diff.txt|
+    DiffText     { fg = normal.yellow }, -- diff mode: Changed text within a changed line |diff.txt|
+    EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    TermCursor   { }, -- cursor in a focused terminal
+    TermCursorNC { }, -- cursor in an unfocused terminal
+    ErrorMsg     { fg = normal.red }, -- error messages on the command line
     VertSplit    { fg = normal.background.lighten(10), bg = normal.background.lighten(10) }, -- the column separating vertically split windows
     Folded       { fg = normal.white }, -- line used for closed folds
     FoldColumn   { fg = normal.white }, -- 'foldcolumn'
@@ -93,12 +102,24 @@ local theme = lush(function()
     CursorLineNr { fg = normal.foreground, bg = bright.black }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { bg = bright.black }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg      { fg = normal.green }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    MsgArea      { }, -- Area for messages and cmdline
+    MsgSeparator { fg = normal.foreground, bg = bright.black }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+    NonText      { fg = normal.blue }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal       { fg = normal.foreground, bg = normal.background }, -- normal text
     NormalFloat  { fg = normal.foreground, bg = normal.background.lighten(10) }, -- Normal text in floating windows.
+    NormalNC     { }, -- normal text in non-current windows
     Pmenu        { fg = normal.foreground, bg = bright.black }, -- Popup menu: normal item.
     PmenuSel     { fg = bright.black, bg = normal.foreground }, -- Popup menu: selected item.
+    PmenuSbar    { bg = normal.green, fg = normal.green }, -- Popup menu: scrollbar.
+    PmenuThumb   { bg = dim.green, fg = bright.green }, -- Popup menu: Thumb of the scrollbar.
+    Question     { fg = bright.green }, -- |hit-enter| prompt and yes/no questions
+    QuickFixLine { bg = normal.yellow, fg = normal.background }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    SpecialKey   { fg = normal.cyan }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     Search       { fg = normal.background, bg = normal.yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpellBad     { fg = normal.red }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
+    -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+    -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine   { fg = normal.foreground, bg = bright.black }, -- status line of current window
     StatusLineNC { fg = normal.white, bg = normal.background.lighten(10)}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine      { fg = normal.foreground, bg = bright.black }, -- tab pages line, not active tab page label
@@ -153,8 +174,11 @@ local theme = lush(function()
 
     Ignore     { }, -- (preferred) left blank, hidden  |hl-Ignore|
     Error      { fg = normal.red }, -- (preferred) any erroneous construct
-    Warning    { fg = bright.red }, -- (preferred) any erroneous construct
     Todo       { fg = normal.yellow }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+
+    -- LspReferenceText                     { }, -- used for highlighting "text" references
+    -- LspReferenceRead                     { }, -- used for highlighting "read" references
+    -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
     LspDiagnosticsDefaultError           { fg = normal.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultWarning         { fg = bright.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
