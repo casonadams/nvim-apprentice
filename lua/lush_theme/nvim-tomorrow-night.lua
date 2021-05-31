@@ -125,24 +125,24 @@ local theme = lush(function()
     TabLine      { fg = normal.foreground, bg = bright.black }, -- tab pages line, not active tab page label
     TabLineFill  { bg = bright.black }, -- tab pages line, where there are no labels
     TabLineSel   { fg = normal.green, bg = bright.black }, -- tab pages line, active tab page label
-    Title        { fg = normal.white }, -- titles for output from ":set all", ":autocmd" etnormal.
+    Title        { fg = normal.blue }, -- titles for output from ":set all", ":autocmd" etnormal.
     Visual       { bg = bright.black }, -- Visual mode selection
     VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { }, -- warning messages
     Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    WildMenu     { }, -- current match in 'wildmenu' completion
+    WildMenu     { }, -- current match in 'wildmenu' completbrightion
 
     Constant       { fg = bright.red }, -- (preferred) any constant
     String         { fg = normal.green }, --   a string constant: "this is a string"
-    Character      { fg = normal.red }, --  a character constant: 'c', '\n'
+    Character      { fg = bright.red }, --  a character constant: 'c', '\n'
     Number         { fg = bright.red }, --   a number constant: 234, 0xff
-    Boolean        { fg = normal.red }, --  a boolean constant: TRUE, false
-    Float          { fg = normal.red }, --    a floating point constant: 2.3e10
+    Boolean        { fg = bright.red }, --  a boolean constant: TRUE, false
+    Float          { fg = bright.red }, --    a floating point constant: 2.3e10
 
     Identifier     { fg = normal.red }, -- (preferred) any variable name
     Function       { fg = normal.blue }, -- function name (also: methods for classes)
 
-    Statement      { fg = normal.magenta }, -- (preferred) any statement
+    Statement      { fg = normal.red }, -- (preferred) any statement
     Conditional    { fg = normal.magenta }, --  if, then, else, endif, switch, etnormal.
     Repeat         { fg = normal.magenta }, --   for, do, while, etnormal.
     Label          { fg = normal.yellow }, --    case, default, etnormal.
@@ -159,12 +159,12 @@ local theme = lush(function()
     Type           { fg = normal.yellow }, -- (preferred) int, long, char, etnormal.
     StorageClass   { fg = normal.yellow }, -- static, register, volatile, etnormal.
     Structure      { fg = normal.blue }, --  struct, union, enum, etnormal.
-    Typedef        { fg = normal.blue }, --  A typedef
+    Typedef        { fg = normal.yellow }, --  A typedef
 
     Special        { fg = normal.cyan }, -- (preferred) any special symbol
     SpecialChar    { fg = normal.cyan }, --  special character in a constant
     Tag            { fg = normal.cyan }, --    you can use CTRL-] on this
-    Delimiter      { fg = normal.cyan }, --  character that needs attention
+    Delimiter      { fg = normal.blue }, --  character that needs attention
     SpecialComment { fg = normal.cyan }, -- special things inside a comment
     Debug          { fg = normal.cyan }, --    debugging statements
 
