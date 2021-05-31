@@ -131,15 +131,15 @@ local theme = lush(function()
     Float          { fg = normal.red }, --    a floating point constant: 2.3e10
 
     Identifier     { fg = normal.blue }, -- (preferred) any variable name
-    Function       { fg = normal.yellow }, -- function name (also: methods for classes)
+    Function       { fg = normal.blue }, -- function name (also: methods for classes)
 
-    Statement      { fg = normal.blue }, -- (preferred) any statement
-    Conditional    { fg = normal.blue }, --  if, then, else, endif, switch, etnormal.
-    Repeat         { fg = normal.blue }, --   for, do, while, etnormal.
-    Label          { fg = normal.blue }, --    case, default, etnormal.
-    Operator       { fg = normal.blue }, -- "sizeof", "+", "*", etnormal.
-    Keyword        { fg = normal.blue }, --  any other keyword
-    Exception      { fg = normal.blue }, --  try, catch, throw
+    Statement      { fg = normal.magenta }, -- (preferred) any statement
+    Conditional    { fg = normal.magenta }, --  if, then, else, endif, switch, etnormal.
+    Repeat         { fg = normal.magenta }, --   for, do, while, etnormal.
+    Label          { fg = normal.magenta }, --    case, default, etnormal.
+    Operator       { fg = normal.magenta }, -- "sizeof", "+", "*", etnormal.
+    Keyword        { fg = normal.magenta }, --  any other keyword
+    Exception      { fg = normal.magenta }, --  try, catch, throw
 
     PreProc        { fg = normal.green }, -- (preferred) generic Preprocessor
     Include        { fg = normal.green }, --  preprocessor #include

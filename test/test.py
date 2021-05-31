@@ -17,6 +17,11 @@ def f(x):
     f(s[0].lower())
     nested_func(42)
 
+    if True:
+        pass
+    else:
+        pass
+
 class Foo:
     tags: List[str]
 
