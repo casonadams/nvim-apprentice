@@ -110,41 +110,41 @@ local theme = lush(function()
     Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu     { }, -- current match in 'wildmenu' completion
 
-    Constant       { fg = normal.red }, -- (preferred) any constant
+    Constant       { fg = bright.red }, -- (preferred) any constant
     String         { fg = normal.green }, --   a string constant: "this is a string"
     Character      { fg = normal.red }, --  a character constant: 'c', '\n'
     Number         { fg = bright.red }, --   a number constant: 234, 0xff
     Boolean        { fg = normal.red }, --  a boolean constant: TRUE, false
     Float          { fg = normal.red }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = normal.blue }, -- (preferred) any variable name
+    Identifier     { fg = normal.red }, -- (preferred) any variable name
     Function       { fg = normal.blue }, -- function name (also: methods for classes)
 
     Statement      { fg = normal.magenta }, -- (preferred) any statement
     Conditional    { fg = normal.magenta }, --  if, then, else, endif, switch, etnormal.
     Repeat         { fg = normal.magenta }, --   for, do, while, etnormal.
     Label          { fg = normal.magenta }, --    case, default, etnormal.
-    Operator       { fg = normal.magenta }, -- "sizeof", "+", "*", etnormal.
+    Operator       { fg = normal.foreground }, -- "sizeof", "+", "*", etnormal.
     Keyword        { fg = normal.magenta }, --  any other keyword
     Exception      { fg = normal.magenta }, --  try, catch, throw
 
-    PreProc        { fg = normal.green }, -- (preferred) generic Preprocessor
-    Include        { fg = normal.green }, --  preprocessor #include
+    PreProc        { fg = normal.yellow }, -- (preferred) generic Preprocessor
+    Include        { fg = normal.blue }, --  preprocessor #include
     Define         { fg = normal.blue }, --   preprocessor #define
-    Macro          { fg = normal.blue }, --    same as Define
+    Macro          { fg = normal.red }, --    same as Define
     PreCondit      { fg = normal.blue }, --  preprocessor #if, #else, #endif, etnormal.
 
-    Type           { fg = normal.magenta }, -- (preferred) int, long, char, etnormal.
-    StorageClass   { fg = normal.magenta }, -- static, register, volatile, etnormal.
+    Type           { fg = normal.yellow }, -- (preferred) int, long, char, etnormal.
+    StorageClass   { fg = normal.yellow }, -- static, register, volatile, etnormal.
     Structure      { fg = normal.blue }, --  struct, union, enum, etnormal.
     Typedef        { fg = normal.blue }, --  A typedef
 
-    Special        { fg = normal.green }, -- (preferred) any special symbol
-    SpecialChar    { fg = normal.green }, --  special character in a constant
-    Tag            { fg = normal.green }, --    you can use CTRL-] on this
-    Delimiter      { fg = normal.green }, --  character that needs attention
-    SpecialComment { fg = normal.green }, -- special things inside a comment
-    Debug          { fg = normal.green }, --    debugging statements
+    Special        { fg = normal.cyan }, -- (preferred) any special symbol
+    SpecialChar    { fg = normal.cyan }, --  special character in a constant
+    Tag            { fg = normal.cyan }, --    you can use CTRL-] on this
+    Delimiter      { fg = normal.cyan }, --  character that needs attention
+    SpecialComment { fg = normal.cyan }, -- special things inside a comment
+    Debug          { fg = normal.cyan }, --    debugging statements
 
     Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
     Bold       { gui = "bold" },
@@ -153,7 +153,7 @@ local theme = lush(function()
     Ignore     { }, -- (preferred) left blank, hidden  |hl-Ignore|
     Error      { fg = normal.red }, -- (preferred) any erroneous construct
     Warning    { fg = bright.red }, -- (preferred) any erroneous construct
-    Todo       { fg = normal.background, bg = normal.foreground }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo       { fg = normal.yellow }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     LspDiagnosticsDefaultError           { fg = normal.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultWarning         { fg = bright.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
