@@ -37,7 +37,7 @@ local v = vim.g -- this must be done, because lush is executed in a bare environ
 v.colors_name = 'nvim-tomorrow-night'
 
 local bright_level = 20
-local dim_level = 30
+local dim_level = 40
 
 local normal = {
   background = hsl("#1d1f21"),
