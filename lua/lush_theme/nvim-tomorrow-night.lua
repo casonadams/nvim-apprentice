@@ -79,13 +79,13 @@ local theme = lush(function()
     Comment      { fg = dim.white }, -- any comment
     Cursor       { fg = normal.foreground }, -- character under the cursor
     CursorLine   { bg = bright.black }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    DiffAdd      { fg = normal.green }, -- diff mode: Added line |diff.txt|
-    DiffChange   { fg = normal.blue }, -- diff mode: Changed line |diff.txt|
-    DiffDelete   { fg = normal.red }, -- diff mode: Deleted line |diff.txt|
+    DiffAdd      { fg = normal.green, bg = bright.black }, -- diff mode: Added line |diff.txt|
+    DiffChange   { fg = normal.blue, bg = bright.black }, -- diff mode: Changed line |diff.txt|
+    DiffDelete   { fg = normal.red, bg = bright.black }, -- diff mode: Deleted line |diff.txt|
     VertSplit    { fg = normal.background.lighten(10), bg = normal.background.lighten(10) }, -- the column separating vertically split windows
     Folded       { fg = normal.white }, -- line used for closed folds
     FoldColumn   { fg = normal.white }, -- 'foldcolumn'
-    SignColumn   { }, -- column where |signs| are displayed
+    SignColumn   { bg = bright.black }, -- column where |signs| are displayed
     IncSearch    { fg = normal.background, bg = normal.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute   { fg = normal.background, bg = normal.yellow }, -- |:substitute| replacement text highlighting
     LineNr       { fg = dim.white }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -95,7 +95,7 @@ local theme = lush(function()
     Normal       { fg = normal.foreground, bg = normal.background }, -- normal text
     NormalFloat  { fg = normal.foreground, bg = normal.background.lighten(10) }, -- Normal text in floating windows.
     Pmenu        { fg = normal.foreground, bg = bright.black }, -- Popup menu: normal item.
-    PmenuSel     { bg = bright.black, fg = normal.foreground }, -- Popup menu: selected item.
+    PmenuSel     { fg = bright.black, bg = normal.foreground }, -- Popup menu: selected item.
     Search       { fg = normal.background, bg = normal.yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpellBad     { fg = normal.red }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
     StatusLine   { fg = normal.foreground, bg = bright.black }, -- status line of current window
@@ -146,45 +146,39 @@ local theme = lush(function()
     SpecialComment { fg = normal.green }, -- special things inside a comment
     Debug          { fg = normal.green }, --    debugging statements
 
-    -- Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
-    Underlined { fg = normal.yellow }, -- (preferred) text that stands out, HTML links
+    Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
     Bold       { gui = "bold" },
     Italic     { gui = "italic" },
 
-    Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
-
-    Error          { fg = normal.background, bg = normal.red }, -- (preferred) any erroneous construct
-
-    Todo           { fg = normal.background, bg = normal.foreground }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-
-    LspReferenceText                     { }, -- used for highlighting "text" references
-    LspReferenceRead                     { }, -- used for highlighting "read" references
-    LspReferenceWrite                    { }, -- used for highlighting "write" references
+    Ignore     { }, -- (preferred) left blank, hidden  |hl-Ignore|
+    Error      { fg = normal.red }, -- (preferred) any erroneous construct
+    Warning    { fg = bright.red }, -- (preferred) any erroneous construct
+    Todo       { fg = normal.background, bg = normal.foreground }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     LspDiagnosticsDefaultError           { fg = normal.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultWarning         { fg = normal.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultWarning         { fg = bright.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultInformation     { fg = normal.blue }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultHint            { fg = normal.blue }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     LspDiagnosticsVirtualTextError       { fg = normal.red }, -- Used for "Error" diagnostic virtual text
-    LspDiagnosticsVirtualTextWarning     { fg = normal.red }, -- Used for "Warning" diagnostic virtual text
+    LspDiagnosticsVirtualTextWarning     { fg = bright.red }, -- Used for "Warning" diagnostic virtual text
     LspDiagnosticsVirtualTextInformation { fg = normal.blue }, -- Used for "Information" diagnostic virtual text
     LspDiagnosticsVirtualTextHint        { fg = normal.blue }, -- Used for "Hint" diagnostic virtual text
 
-    LspDiagnosticsUnderlineError         { fg = normal.red, gui = "underline" }, -- Used to underline "Error" diagnostics
-    LspDiagnosticsUnderlineWarning       { fg = normal.red, gui = "underline" }, -- Used to underline "Warning" diagnostics
-    LspDiagnosticsUnderlineInformation   { fg = normal.blue, gui = "underline" }, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint          { fg = normal.blue, gui = "underline" }, -- Used to underline "Hint" diagnostics
+    LspDiagnosticsUnderlineError         { fg = "none", gui = "none" }, -- Used to underline "Error" diagnostics
+    LspDiagnosticsUnderlineWarning       { fg = "none", gui = "none" }, -- Used to underline "Warning" diagnostics
+    LspDiagnosticsUnderlineInformation   { fg = "none", gui = "none" }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineHint          { fg = "none", gui = "none" }, -- Used to underline "Hint" diagnostics
 
-    LspDiagnosticsFloatingError          { fg = normal.red, bg = normal.background.lighten(10) }, -- Used to color "Error" diagnostic messages in diagnostics float
-    LspDiagnosticsFloatingWarning        { fg = normal.red, bg = normal.background.lighten(10) }, -- Used to color "Warning" diagnostic messages in diagnostics float
-    LspDiagnosticsFloatingInformation    { fg = normal.blue, bg = normal.background.lighten(10) }, -- Used to color "Information" diagnostic messages in diagnostics float
-    LspDiagnosticsFloatingHint           { fg = normal.blue, bg = normal.background.lighten(10) }, -- Used to color "Hint" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingError          { fg = normal.red, bg = bright.black }, -- Used to color "Error" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingWarning        { fg = normal.red, bg = bright.black }, -- Used to color "Warning" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingInformation    { fg = normal.blue, bg = bright.black }, -- Used to color "Information" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingHint           { fg = normal.blue, bg = bright.black }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
-    LspDiagnosticsSignError              { fg = normal.red }, -- Used for "Error" signs in sign column
-    LspDiagnosticsSignWarning            { fg = normal.red }, -- Used for "Warning" signs in sign column
-    LspDiagnosticsSignInformation        { fg = normal.blue }, -- Used for "Information" signs in sign column
-    LspDiagnosticsSignHint               { fg = normal.blue }, -- Used for "Hint" signs in sign column
+    LspDiagnosticsSignError              { fg = normal.red, bg = bright.black }, -- Used for "Error" signs in sign column
+    LspDiagnosticsSignWarning            { fg = bright.red, bg = bright.black }, -- Used for "Warning" signs in sign column
+    LspDiagnosticsSignInformation        { fg = normal.blue, bg = bright.black  }, -- Used for "Information" signs in sign column
+    LspDiagnosticsSignHint               { fg = normal.blue, bg = bright.black  }, -- Used for "Hint" signs in sign column
 
     TSAnnotation         { },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     TSAttribute          { },    -- (unstable) TODO: docs
