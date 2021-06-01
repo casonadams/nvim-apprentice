@@ -346,6 +346,7 @@ local theme = lush(function()
 
     markdownBlockquote {fg = clrs.nord7},
     markdownCode {fg = clrs.nord7},
+    markdownCode {fg = clrs.nord7},
     markdownCodeDelimiter {fg = clrs.nord7},
     markdownFootnote {fg = clrs.nord7},
     markdownId {fg = clrs.nord7},
