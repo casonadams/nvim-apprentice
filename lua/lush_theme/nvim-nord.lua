@@ -159,7 +159,7 @@ local theme = lush(function()
     },
     Folded {fg = clrs.nord3.li(7), bg = clrs.nord1, gui = spec.bold},
     FoldColumn {fg = clrs.nord3, bg = clrs.nord0},
-    SignColumn {fg = clrs.nord1.li(2), bg = clrs.nord0},
+    SignColumn {fg = clrs.nord1.li(2), bg = clrs.nord3},
 
     -- +-- Navigation --+
     Directory {fg = clrs.nord8},
@@ -530,10 +530,10 @@ local theme = lush(function()
     LspDiagnosticsFloatingInformation    { fg = clrs.nord8 }, -- Used to color "Information" diagnostic messages in diagnostics float
     LspDiagnosticsFloatingHint           { fg = clrs.nord10 }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
-    LspDiagnosticsSignError              { fg = clrs.nord11, bg = clrs.nord0 }, -- Used for "Error" signs in sign column
-    LspDiagnosticsSignWarning            { fg = clrs.nord13, bg = clrs.nord0 }, -- Used for "Warning" signs in sign column
-    LspDiagnosticsSignInformation        { fg = clrs.nord8, bg = clrs.nord0 }, -- Used for "Information" signs in sign column
-    LspDiagnosticsSignHint               { fg = clrs.nord10, bg = clrs.nord0 }, -- Used for "Hint" signs in sign column
+    LspDiagnosticsSignError              { fg = clrs.nord11, bg = clrs.nord3 }, -- Used for "Error" signs in sign column
+    LspDiagnosticsSignWarning            { fg = clrs.nord13, bg = clrs.nord3 }, -- Used for "Warning" signs in sign column
+    LspDiagnosticsSignInformation        { fg = clrs.nord8, bg = clrs.nord3 }, -- Used for "Information" signs in sign column
+    LspDiagnosticsSignHint               { fg = clrs.nord10, bg = clrs.nord3 }, -- Used for "Hint" signs in sign column
 
     LSPDiagnosticsVirtualTextWarning {
       fg = LspDiagnosticsWarning.fg.de(20).li(10),
@@ -561,10 +561,10 @@ local theme = lush(function()
 
     -- Signify
     -- > mhinz/vim-signify
-    SignifySignAdd {fg = clrs.nord14},
-    SignifySignChange {fg = clrs.nord13},
-    SignifySignChangeDelete {fg = clrs.nord11},
-    SignifySignDelete {fg = clrs.nord11},
+    SignifySignAdd {fg = clrs.nord14, bg = clrs.nord3 },
+    SignifySignChange {fg = clrs.nord13, bg = clrs.nord3 },
+    SignifySignChangeDelete {fg = clrs.nord11, bg = clrs.nord3 },
+    SignifySignDelete {fg = clrs.nord11, bg = clrs.nord3 },
 
     -- fugitive.vim
     -- > tpope/vim-fugitive
@@ -734,10 +734,10 @@ local theme = lush(function()
 
     -- gitsigns.nvim
     -- > lewis6991/gitsigns.nvim
-    GreenSign {fg = clrs.nord14},
-    BlueSign {fg = clrs.nord10},
-    RedSign {fg = clrs.nord11},
-    PurpleSign {fg = clrs.nord15},
+    GreenSign {fg = clrs.nord14, bg = clrs.nord3 },
+    BlueSign {fg = clrs.nord10, bg = clrs.nord3 },
+    RedSign {fg = clrs.nord11, bg = clrs.nord3 },
+    PurpleSign {fg = clrs.nord15, bg = clrs.nord3 },
 
   }
 end)
