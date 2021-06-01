@@ -525,10 +525,10 @@ local theme = lush(function()
     LspDiagnosticsUnderlineInformation   { fg = "none", gui = "none" }, -- Used to underline "Information" diagnostics
     LspDiagnosticsUnderlineHint          { fg = "none", gui = "none" }, -- Used to underline "Hint" diagnostics
 
-    -- LspDiagnosticsFloatingError          { fg = clrs.nord11 }, -- Used to color "Error" diagnostic messages in diagnostics float
-    -- LspDiagnosticsFloatingWarning        { fg = clrs.nord13 }, -- Used to color "Warning" diagnostic messages in diagnostics float
-    -- LspDiagnosticsFloatingInformation    { fg = clrs.nord8 }, -- Used to color "Information" diagnostic messages in diagnostics float
-    -- LspDiagnosticsFloatingHint           { fg = clrs.nord10 }, -- Used to color "Hint" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingError          { fg = clrs.nord4 }, -- Used to color "Error" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingWarning        { fg = clrs.nord4 }, -- Used to color "Warning" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingInformation    { fg = clrs.nord4 }, -- Used to color "Information" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingHint           { fg = clrs.nord4 }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
     LspDiagnosticsSignError              { fg = clrs.nord11 }, -- Used for "Error" signs in sign column
     LspDiagnosticsSignWarning            { fg = clrs.nord13 }, -- Used for "Warning" signs in sign column
