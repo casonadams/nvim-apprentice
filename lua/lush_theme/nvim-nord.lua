@@ -530,10 +530,15 @@ local theme = lush(function()
     LspDiagnosticsFloatingInformation    { fg = clrs.nord8, bg = clrs.nord0 }, -- Used to color "Information" diagnostic messages in diagnostics float
     LspDiagnosticsFloatingHint           { fg = clors.nord10, bg = clrs.nord0 }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
-    LspDiagnosticsSignError              { fg = normal.red, bg = bright.black }, -- Used for "Error" signs in sign column
-    LspDiagnosticsSignWarning            { fg = bright.red, bg = bright.black }, -- Used for "Warning" signs in sign column
-    LspDiagnosticsSignInformation        { fg = normal.blue, bg = bright.black  }, -- Used for "Information" signs in sign column
-    LspDiagnosticsSignHint               { fg = normal.blue, bg = bright.black  }, -- Used for "Hint" signs in sign column
+    LspDiagnosticsFloatingError          { fg = clrs.nord11 }, -- Used to color "Error" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingWarning        { fg = clrs.nord13 }, -- Used to color "Warning" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingInformation    { fg = clrs.nord8 }, -- Used to color "Information" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingHint           { fg = clors.nord10 }, -- Used to color "Hint" diagnostic messages in diagnostics float
+
+    LspDiagnosticsSignError              { fg = clrs.nord11, bg = clrs.nord0 }, -- Used for "Error" signs in sign column
+    LspDiagnosticsSignWarning            { fg = clrs.nord13, bg = clrs.nord0 }, -- Used for "Warning" signs in sign column
+    LspDiagnosticsSignInformation        { fg = clrs.nord8, bg = clrs.nord0 }, -- Used for "Information" signs in sign column
+    LspDiagnosticsSignHint               { fg = clrs.nord10, bg = clrs.nord0 }, -- Used for "Hint" signs in sign column
 
     LSPDiagnosticsVirtualTextWarning {
       fg = LspDiagnosticsWarning.fg.de(20).li(10),
